@@ -12,6 +12,10 @@ private:
 
 public:
     void add(Product product, int quantity) {
+        if (quantity > product.getQuantity()) {
+            cout << "Not enough stock for " << product.get_name() << endl;
+            return;
+        }
         items.push_back({product, quantity});
     }
 
